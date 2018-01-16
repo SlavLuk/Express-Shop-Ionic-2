@@ -1,0 +1,75 @@
+
+<ion-header >
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Express Shop</ion-title>
+    <ion-buttons end>
+    <button ion-button icon-only (click)='cart()'>
+
+ <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+  
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+ 
+</ion-header>
+
+
+
+  
+
+
+<ion-content >
+ 
+ 
+  <div class="card">
+    <ion-slides autoplay='2500' loop='true' pager='true' paginationType='bullets'>
+  <ion-slide>
+     <img src="https://firebasestorage.googleapis.com/v0/b/expressshop-d242a.appspot.com/o/appTesco.jpg?alt=media&token=750a2aec-a3f1-42fd-921d-7058afbf3206"/> 
+  </ion-slide>
+  <ion-slide>
+    <img src="https://firebasestorage.googleapis.com/v0/b/expressshop-d242a.appspot.com/o/appTesco1.jpg?alt=media&token=8f18a2ec-f8d8-4d3d-8518-c3f8cdaa8bc4"/>
+  </ion-slide>
+  <ion-slide>
+    <img src="https://firebasestorage.googleapis.com/v0/b/expressshop-d242a.appspot.com/o/appTesco2.jpg?alt=media&token=d8f86c47-1148-479b-b583-17d2126a2512"/>
+  </ion-slide>
+</ion-slides>
+</div>
+
+
+<ion-list >
+    <ion-item-group>
+      
+    <ion-item-divider color="light" style='text-align: center'><h1> Welcome to Express Shop</h1></ion-item-divider>
+     <ion-item>   <button ion-item (click)='doSearch()'>
+           <ion-icon name="locate" item-left></ion-icon>
+         
+           <h1>Store Locator</h1>
+  
+    </button></ion-item>
+
+    <ion-searchbar  showCancelButton=true  *ngIf = "click" (ionInput)="searchTerm.next($event.target.value)" (ionCancel)="search()" ></ion-searchbar>
+    <ion-item> 
+      <button  ion-item (click)='goSearch()'>
+        <ion-icon name="cart" item-left></ion-icon>
+        <h1>Grocery Shopping</h1>
+  
+      </button>
+    </ion-item>
+    <ion-item> 
+      <button ion-item (click)='goBarScan()'>
+          <ion-icon name="barcode" item-left></ion-icon>
+          <h1>Bar Scanner</h1>
+  
+    </button></ion-item>
+   
+  </ion-item-group>
+
+   
+    
+
+</ion-list>
+
+</ion-content>

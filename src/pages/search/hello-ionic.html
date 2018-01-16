@@ -1,0 +1,42 @@
+
+  <ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Grocery Search</ion-title>
+      <ion-buttons end>
+     <button ion-button icon-only (click)='cart()'>
+
+ <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+  
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+<ion-searchbar  (ionInput)="searchTerm.next($event.target.value)"></ion-searchbar>
+</ion-header>
+
+ 
+
+<ion-content padding>
+
+ 
+
+  <ion-list text-wrap >
+
+ <ion-item *ngFor="let item of products" (click)="itemTapped($event, item)">
+     
+<ion-thumbnail item-left>
+     <img [src] = "item.image" />
+     </ion-thumbnail>
+     <div >
+      <h2>{{item.PromotionDescription}} </h2>
+      <h2>{{item.name}}</h2>
+      <p>{{item.description}}</p>
+      <h1>Price : {{item.price|currency:'EUR'}}</h1>
+     </div>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

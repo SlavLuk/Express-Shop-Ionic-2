@@ -1,0 +1,29 @@
+
+
+<ion-header>
+  <ion-navbar color="primary">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  
+    <ion-title>Barcode Scanner</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+
+  <ion-list>
+<ion-item *ngIf="barCodeResults">
+
+<p>Bar code text: {{barCodeResults.text}}</p>
+<p>Bar code format: {{barCodeResults.format}}</p>
+<p>Cancelled: {{barCodeResults.cancelled}}</p>
+
+</ion-item>
+
+
+  </ion-list>
+
+</ion-content>

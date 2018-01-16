@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar color="primary">
+  
+    <ion-title>Item Details</ion-title>
+
+
+      <ion-buttons end>
+
+ <button ion-button icon-only (click)='cart()'>
+ <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+ 
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card  text-wrap *ngIf="selectedItem">
+    <ion-item>
+    <ion-thumbnail item-left>
+       <img [src] = "selectedItem.image"/>
+      </ion-thumbnail> 
+
+     
+       <div class="btn">
+    <button ion-fab mini (click)='addAmount()' ><ion-icon name="add"></ion-icon></button>
+    <h1>{{counter}}</h1>
+     <button ion-fab mini color="danger" (click)='removeAmount()'><ion-icon name="remove"></ion-icon></button>
+ </div>
+
+    </ion-item>
+      <ion-card-content>
+       <ion-card-title>
+
+           {{selectedItem.name}}
+
+       </ion-card-title>
+   
+      <h2>{{selectedItem.PromotionDescription}} </h2>
+
+      <h2>{{selectedItem.description}}</h2>
+      <h1>Price : {{selectedItem.price|currency:'EUR'}}</h1>
+      
+
+    
+     </ion-card-content>
+
+  </ion-card>
+
+
+          <button ion-button full  (click)="addItem()">
+          Add to cart
+         </button>
+
+
+</ion-content>
+
