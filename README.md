@@ -1,8 +1,8 @@
 # Project Name
-Express Shop
+## Express Shop
 
 
-## Installation
+### Installation
 
 git clone repo
 npm install
